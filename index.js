@@ -24,7 +24,7 @@ app.listen(app.get('port'), function() {
 });
 
 
-app.get('/db', function (request, response) {
+app.get('/', function (request, response) {
   pg.connect(process.env.DATABASE_URL, function(err, client, done) {
     client.query('SELECT * FROM site_table', function(err, result) {
       done();
