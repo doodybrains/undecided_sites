@@ -2,7 +2,8 @@ var pg = require('pg');
 
 module.exports = function(app, db) {
   app.get('/links', function (req, res) {
-    res.send('Hello')
+    res.send('Hello');
+    console.log(req, res);
   });
 
   app.get('/', function (req, response) {
