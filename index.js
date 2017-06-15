@@ -23,15 +23,11 @@ app.get('/', function(request, response) {
   });
 });
 
-app.get('/cool', function(request, response) {
-  response.send(cool());
-});
+// app.post() {
+//   insert response into db
+// }
+
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
-});
-
-
-app.get('pages/index', function (request, response) {
-
 });
