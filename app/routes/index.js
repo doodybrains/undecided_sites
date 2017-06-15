@@ -1,9 +1,12 @@
+var dotenv = require('dotenv');
 var pg = require('pg');
+var bodyParser = require('body-parser');
+dotenv.load();
 
 module.exports = function(app, db) {
-  app.get('/links', function (req, res) {
-    res.send('Hello');
-    console.log(req, res);
+  app.use(bodyParser.json());
+  app.post('/links', function (req, res) {
+    res.send(req.body);
   });
 
   app.get('/', function (req, response) {
