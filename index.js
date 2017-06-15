@@ -23,10 +23,9 @@ app.get('/', function(request, response) {
   });
 });
 
-// app.post() {
-//   insert response into db
-// }
-
+app.post('/links', function (req, res) {
+  res.send('POST request to the links')
+})
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
