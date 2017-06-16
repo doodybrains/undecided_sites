@@ -7,7 +7,9 @@
 <body>
 
 <div class="container">
-  links
+  <% results.forEach(function(r) { %>
+    <li><a href="<%= r.link %>"><%= r.id %></li>
+  <% }); %>
 </div>
 
 </body>
