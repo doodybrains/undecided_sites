@@ -7,7 +7,7 @@ module.exports = function(app, db) {
   app.use(bodyParser.json());
   app.post('/links', function (req, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
-      client.query('INSERT INTO site_table(id, link) VALUES($1, $2) returning id', [req.body.id, req.body.link], function(err, result) {
+      client.query('INSERT INTO site_table(id, links) VALUES($1, $2) returning id', [req.body.id, req.body.links], function(err, result) {
         done();
         if(err) {
           return console.error('error running query', err);
