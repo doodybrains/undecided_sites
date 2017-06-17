@@ -10,8 +10,10 @@
 <h2>FULL LIST</h2>
 
 <ul>
+  <br/>
+  <br/>
   <% results.forEach(function(r) { %>
-    <li><a href="<%= r.link %>"><%= r.id %></li>
+    <%- r.link %>
   <% }); %>
 </ul>
 
