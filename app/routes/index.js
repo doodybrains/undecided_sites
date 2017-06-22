@@ -24,7 +24,37 @@ module.exports = function(app, db) {
 
   app.post('/send', function (req, res) {
     console.log(req.body.response);
-    app.set('data', req.body.response);
+    var s3 = new aws.S3(),
+    file = "views/send.ejs",
+    result = {
+      error: 0,
+      uploaded: []
+    };
+
+    flow.exec(
+      function() {
+        app.set('data', req.body.response);
+        fs.readFile("views/send.ejs", this);
+      },
+      function(err, data) {
+        s3.putObject({
+          Bucket: process.env.S3_BUCKET,
+          Key: 'hellooo',
+          Body: data,
+          ContentType: 'text/html',
+        }, this);
+      },
+      function(err, data) {
+        if (err) {
+          console.error('Error : ' + err);
+          result.error++;
+        }
+        result.uploaded.push(JSON.stringify(data));
+        this();
+      },
+      function() {
+        console.log('sent!');
+      });
   });
 
   app.get('/send', function (req, res) {
