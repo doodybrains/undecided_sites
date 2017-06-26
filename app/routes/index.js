@@ -25,7 +25,6 @@ module.exports = function(app, db) {
   app.post('/send', function (req, res) {
     console.log(req.body.response);
     var s3 = new aws.S3(),
-    file = "views/send.ejs",
     result = {
       error: 0,
       uploaded: []
@@ -34,12 +33,18 @@ module.exports = function(app, db) {
     flow.exec(
       function() {
         app.set('data', req.body.response);
-        fs.readFile("views/send.ejs", this);
+        fs.writeFile("public/index.html", req.body.response, function(err) {
+            if(err) {
+              return console.log(err);
+            }
+            console.log("The file was saved!");
+        });
+        fs.readFile("public/index.html", this);
       },
       function(err, data) {
         s3.putObject({
           Bucket: process.env.S3_BUCKET,
-          Key: 'hellooo',
+          Key: `${req.body.tag}.html`,
           Body: data,
           ContentType: 'text/html',
         }, this);
