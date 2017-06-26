@@ -23,7 +23,6 @@ module.exports = function(app, db) {
   });
 
   app.post('/send', function (req, res) {
-    console.log(req.body.response);
     var s3 = new aws.S3(),
     result = {
       error: 0,
@@ -33,7 +32,7 @@ module.exports = function(app, db) {
     flow.exec(
       function() {
         app.set('data', req.body.response);
-        fs.writeFile("public/index.html", req.body.response, function(err) {
+        fs.writeFile(`public/index-${req.body.tag}.html`, req.body.response, function(err) {
             if(err) {
               return console.log(err);
             }
