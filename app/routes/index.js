@@ -57,10 +57,8 @@ module.exports = function(app, db) {
         }
         result.uploaded.push(JSON.stringify(data));
         this();
-      },
-      function() {
-        res.send('COMPLETE!!!')
       });
+      res.send(`Here's your ${req.body.style} website: https://s3-us-west-2.amazonaws.com/undecided-sites/${req.body.tag}.html`);
   });
 
   app.get('/send', function (req, res) {
