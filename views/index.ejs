@@ -1,23 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <title>u n d e c i d e d</title>
+  <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/main.css">
 </head>
 
 <body>
-
-<div class="container">
-<h2>FULL LIST</h2>
-
-<ul>
-  <br/>
-  <br/>
-  <% results.forEach(function(r) { %>
-    <%- r.links %>
-  <% }); %>
-</ul>
-
-</div>
-
+  <div class="container">
+    <h2>ALL THE UNDECIDED LINKS</h2>
+    <% results.forEach(function(r) { %>
+      <%- r.links %>
+    <% }); %>
+  </div>
 </body>
 </html>
