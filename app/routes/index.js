@@ -29,7 +29,8 @@ module.exports = function(app, db) {
       uploaded: []
     };
 
-    var indexbody = `<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/${req.body.style}.css"></head><body>${req.body.response}</body></html>`;
+    var indexbody = `<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/${req.body.style}.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"></head><body><div class="container">${req.body.response}</div></body></html>`;
 
     flow.exec(
       function() {

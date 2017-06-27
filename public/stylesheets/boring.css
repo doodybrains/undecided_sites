@@ -1,3 +1,20 @@
 body {
   border: 5px solid black;
+  padding: 0;
+  margin: 0;
+}
+
+body .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .container a {
+  display: block;
+  font-size: 2em;
+  color: #000;
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Roboto Mono', monospace;
 }

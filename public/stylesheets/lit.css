@@ -1,3 +1,22 @@
 body {
   border: 5px solid hotpink;
+  padding: 0;
+  margin: 0;
+  background: #FFFF00;
+}
+
+body .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body .container a {
+  display: block;
+  font-size: 2em;
+  color: #E0FFFF;
+  transform: rotate(-35deg);
+  width: 100%;
+  margin: 0 auto;
+  font-family: 'Roboto Mono', monospace;
 }
