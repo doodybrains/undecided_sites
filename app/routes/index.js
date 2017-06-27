@@ -36,9 +36,8 @@ module.exports = function(app, db) {
             if(err) {
               return console.log(err);
             }
-            console.log("The file was saved!");
+            fs.readFile(`public/index-${req.body.tag}.html`, this);
         });
-        fs.readFile("public/index.html", this);
       },
       function(err, data) {
         s3.putObject({
