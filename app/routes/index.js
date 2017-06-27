@@ -59,6 +59,7 @@ module.exports = function(app, db) {
       function() {
         console.log('sent!');
       });
+      res.send('done');
   });
 
   app.get('/send', function (req, res) {
