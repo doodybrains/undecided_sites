@@ -1,5 +1,5 @@
 body {
-  border: 5px solid hotpink;
+  border: 5px dotted dodgerblue;
   padding: 0;
   margin: 0;
   background: #FFFF00;
@@ -9,14 +9,28 @@ body .container {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+  overflow: scroll;
 }
 
-body .container a {
+body .container a:nth-child(odd) {
   display: block;
   font-size: 2em;
-  color: #E0FFFF;
+  color: #6495ED;
   transform: rotate(-35deg);
-  width: 100%;
+  width: auto;
+  margin: 0 auto;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body .container a:nth-child(even) {
+  display: block;
+  font-size: 2em;
+  color: #00CED1;
+  transform: rotate(35deg);
+  width: auto;
   margin: 0 auto;
   font-family: 'Roboto Mono', monospace;
 }

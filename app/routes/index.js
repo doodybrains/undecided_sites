@@ -59,7 +59,7 @@ module.exports = function(app, db) {
         this();
       },
       function() {
-        console.log('sent!');
+        res.send('COMPLETE!!!')
       });
   });
 
