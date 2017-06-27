@@ -1,0 +1,27 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #FFFF00;
+}
+
+body .container {
+  width: 100%;
+}
+
+body .container a {
+  display: inline-block;
+  font-size: 2em;
+  margin: 0 20px;
+  color: #000;
+  width: 100%;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+}
