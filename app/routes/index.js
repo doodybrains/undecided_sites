@@ -36,8 +36,8 @@ module.exports = function(app, db) {
             if(err) {
               return console.log(err);
             }
-            fs.readFile(`public/index-${req.body.tag}.html`, this);
         });
+        fs.readFile(`public/index-${req.body.tag}.html`, this);
       },
       function(err, data) {
         s3.putObject({
