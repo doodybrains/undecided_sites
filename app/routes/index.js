@@ -29,10 +29,12 @@ module.exports = function(app, db) {
       uploaded: []
     };
 
+    var indexbody = `<!DOCTYPE html><html><header><link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/main.css"></header><body>${req.body.response}</body></html>`;
+
     flow.exec(
       function() {
         app.set('data', req.body.response);
-        fs.writeFile(`public/index-${req.body.tag}.html`, req.body.response, function(err) {
+        fs.writeFile(`public/index-${req.body.tag}.html`, indexbody, function(err) {
             if(err) {
               return console.log(err);
             }
