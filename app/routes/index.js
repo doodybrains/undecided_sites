@@ -29,7 +29,7 @@ module.exports = function(app, db) {
       uploaded: []
     };
 
-    var indexbody = `<!DOCTYPE html><html><header><link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/${req.body.style}.css"></header><body>${req.body.response}</body></html>`;
+    var indexbody = `<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/${req.body.style}.css"></head><body>${req.body.response}</body></html>`;
 
     flow.exec(
       function() {
