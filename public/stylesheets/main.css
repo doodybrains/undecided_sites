@@ -50,5 +50,7 @@ body .container .header a {
 }
 
 body .container .header a.active {
+  color: #000;
+  transform: rotate(-5deg);
   border-bottom: 2px solid #000;
 }
