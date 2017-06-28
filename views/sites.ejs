@@ -13,7 +13,7 @@
     </div>
     <% results.reverse().forEach(function(r) { %>
       <%if (r.Key.includes('.html')) { %>
-        <a href="https://s3-us-west-2.amazonaws.com/undecided-sites/<%- r.Key %>"><%- r.Key %></a>
+        <a target="_blank" href="https://s3-us-west-2.amazonaws.com/undecided-sites/<%- r.Key %>"><%- r.Key %></a>
       <% } %>
     <% }); %>
   </div>
