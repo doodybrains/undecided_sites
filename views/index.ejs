@@ -7,7 +7,11 @@
 
 <body>
   <div class="container">
-    <h2>ALL THE UNDECIDED LINKS</h2>
+    <div class="header">
+      <h2><a className="active" href="/">ALL THE UNDECIDED LINKS</a></h2>
+      <h2><a href="/sites">All THE UNDECIDED SITES</a></h2>
+    </div>
+
     <% results.forEach(function(r) { %>
       <%- r.links %>
     <% }); %>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>u n d e c i d e d</title>
+  <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/main.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h2><a href="/">ALL THE UNDECIDED LINKS</a></h2>
+      <h2><a className="active" href="/sites">All THE UNDECIDED SITES</a></h2>
+    </div>
+    <% results.reverse().forEach(function(r) { %>
+      <%if (r.Key.includes('.html')) { %>
+        <a href="https://s3-us-west-2.amazonaws.com/undecided-sites/<%- r.Key %>"><%- r.Key %></a>
+      <% } %>
+    <% }); %>
+  </div>
+</body>
+</html>

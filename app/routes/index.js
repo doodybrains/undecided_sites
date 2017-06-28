@@ -10,6 +10,7 @@ dotenv.load();
 module.exports = function(app, db) {
   app.engine('html', require('ejs').renderFile);
   app.use(bodyParser.json());
+
   app.post('/links', function (req, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
       client.query('INSERT INTO site_table(id, links) VALUES($1, $2) returning id', [req.body.id, req.body.links], function(err, result) {
@@ -74,6 +75,20 @@ module.exports = function(app, db) {
         else
          { response.render('index', {results: result.rows} ); }
       });
+    });
+  });
+
+  app.get('/sites', function (req, res) {
+    var s3 = new aws.S3();
+
+    var params = {
+     Bucket: process.env.S3_BUCKET,
+     Delimiter: '/'
+   };
+
+    s3.listObjects(params, function (err, data) {
+     if(err)throw err;
+     res.render('sites', {results: data.Contents});
     });
   });
 };
