@@ -30,14 +30,8 @@ module.exports = function(app, db) {
       uploaded: []
     };
 
-    var jsString = '';
-
-    if (req.body.style === 'lit') {
-      jsString = '<script src="https://s3-us-west-2.amazonaws.com/undecided-sites/anime.min.js"></script><script>var litLinks=anime({targets:"a",translateX:function(){return anime.random(-6,6)+"rem"},translateY:function(){return anime.random(-6,6)+"rem"},scale:function(){return anime.random(10,20)/10},rotate:function(){return anime.random(-360,360)},delay:function(){return 400+anime.random(0,500)},duration:function(){return anime.random(1e3,2e3)},direction:"alternate",loop:!0});</script>';
-    }
-
     var indexbody = `<!DOCTYPE html><html><head><link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/${req.body.style}.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"></head><body><div class="container">${req.body.response}</div>${jsString}</body></html>`;
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"></head><body><div class="container">${req.body.response}</div></body></html>`;
 
     flow.exec(
       function() {
