@@ -2,11 +2,38 @@
 <html>
 <head>
   <title>u n d e c i d e d</title>
-  <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/undecided-sites/main.css">
+  <link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 
 <body>
+  <div id="overlay" class="overlay">
+    <div id="close-link" class="close-link">
+      <p>close</p>
+    </div>
+
+    <ul>
+      <li>
+        <a id="about-button" target="_blank">about</a>
+      </li>
+      <li>
+        <a href="/tutorial" target="_blank">tutorial</a>
+      </li>
+      <li>
+        <a href="https://github.com/doodybrains/undecided" target="_blank">github</a>
+      </li>
+    </ul>
+
+    <div id="blurb" class="blurb">
+      <p>undecided.js is a TOOL for making webpages. by just typing 1 word (undecided) and 1 number (the amount of links u want to show) u can create a single web page containing any and every link u can think of! u can link to ur favorite website, or a PDF or ur aunts blog, an article worth reading...anything! the internet is ur oyster. in addition to receiving a url for ur personal page all of ur links will be posted to the undecided homepage where u can scroll through lots of other links posted by other undecided.js users.</p>
+    </div>
+  </div>
+
   <div class="container">
+    <div id="info" class="info">
+      <p>info</p>
+      <p> x </p>
+    </div>
+
     <div class="header">
       <h2><a class="active" href="/">ALL THE UNDECIDED LINKS</a></h2>
       <h2><a href="/sites">All THE UNDECIDED SITES</a></h2>
@@ -16,5 +43,40 @@
       <%- r.links %>
     <% }); %>
   </div>
+  <script src="/vanilla.js"></script>
+  <script>
+    var c = document.getElementById('close-link');
+    var o = document.getElementById('overlay');
+    var s = document.getElementById('info');
+    var blurb = document.getElementById('blurb');
+    var a = document.getElementById('about-button');
+    c.onclick = function() {
+      if (blurb.classList.contains('active')) {
+       blurb.classList.remove('active');
+       c.classList.remove('active');
+     } else {
+       blurb.classList.add('active');
+       c.classList.add('active');
+     }
+    };
+    a.onclick = function() {
+      if (blurb.classList.contains('active')) {
+       blurb.classList.remove('active');
+       c.classList.remove('active');
+     } else {
+       blurb.classList.add('active');
+       c.classList.add('active');
+     }
+    };
+    s.onclick = function() {
+      if (o.classList.contains('active')) {
+       s.classList.remove('active');
+       o.classList.remove('active');
+     } else {
+       s.classList.add('active');
+       o.classList.add('active');
+     }
+    };
+  </script>
 </body>
 </html>

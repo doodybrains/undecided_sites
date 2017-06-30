@@ -91,4 +91,8 @@ module.exports = function(app, db) {
      res.render('sites', {results: data.Contents});
     });
   });
+
+  app.get('/tutorial', function (req, res) {
+    { res.render('tutorial'); }
+  });
 };
