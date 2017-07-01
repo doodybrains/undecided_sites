@@ -19,26 +19,64 @@ body .container {
   flex-wrap: wrap;
   height: 100vh;
   width: 100%;
-  overflow: scroll;
-  border: 8px dotted dodgerblue;
+  overflow: visible;
+  animation: border 90s infinite linear;
+	animation-direction: alternate;
+
 }
 
 body .container a:nth-child(odd) {
   display: block;
-  font-size: 2em;
-  color: #6495ED;
+  font-size: 1.5em;
+  color: white;
   transform: rotate(-35deg);
   width: auto;
   margin: 0 auto;
   font-family: 'Roboto Mono', monospace;
+  animation: rot-reverse 13s infinite linear;
+	animation-direction: alternate;
 }
 
 body .container a:nth-child(even) {
   display: block;
-  font-size: 2em;
-  color: #00CED1;
+  font-size: 1.5em;
+  color: black;
   transform: rotate(35deg);
   width: auto;
   margin: 0 auto;
   font-family: 'Roboto Mono', monospace;
+  animation: rot 13s infinite linear;
+	animation-direction: alternate;
+}
+
+@keyframes rot {
+  from {
+  		transform: rotate(10deg)
+  		           translate(-10px)
+  		           rotate(120deg);
+  	}
+  	to {
+  		transform: rotate(95deg)
+  		           translate(-20px)
+  		           rotate(-125deg);
+  	}
+}
+
+@keyframes rot-reverse {
+  from {
+  		transform: rotate(-10deg)
+  		           translate(10px)
+  		           rotate(-120deg);
+  	}
+  	to {
+  		transform: rotate(-95deg)
+  		           translate(20px)
+  		           rotate(125deg);
+  	}
+}
+
+@keyframes border
+{
+ from{-webkit-transform:rotate(0deg);}
+ to{-webkit-transform:rotate(360deg);}
 }

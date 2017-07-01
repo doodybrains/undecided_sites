@@ -14,9 +14,8 @@ body {
 body .container {
   border: 8px solid black;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
   height: 100vh;
   overflow: scroll;
 }
@@ -27,6 +26,7 @@ body .container a {
   color: #000;
   width: 100%;
   text-align: center;
-  margin: 30px auto;
+  margin: 0;
+  padding: 28px 0;
   font-family: 'Roboto Mono', monospace;
 }
