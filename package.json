@@ -1,7 +1,7 @@
 {
-  "name": "node-js-getting-started",
+  "name": "undecided.js homepage",
   "version": "0.2.6",
-  "description": "A sample Node.js app using Express 4",
+  "description": "Express app for undecided.js links",
   "engines": {
     "node": "6.10.2"
   },
