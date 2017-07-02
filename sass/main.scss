@@ -228,14 +228,15 @@ body {
     right: 20px;
 
     a {
-      color: #ffff00;
+      color: #fff;
       text-decoration: none;
       display: block;
       font-family: 'Roboto Mono', monospace;
-      transform: rotate(-5deg);
+      transition: all 0.325s ease;
 
       &:hover {
         color: #fff;
+        transform: rotate(-5deg);
       }
     }
   }

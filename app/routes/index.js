@@ -62,10 +62,6 @@ module.exports = function(app, db) {
       res.send(`Here's your ${req.body.style} website: https://s3-us-west-2.amazonaws.com/undecided-sites/${req.body.tag}.html`);
   });
 
-  app.get('/send', function (req, res) {
-    res.render('send', {results: app.get('data')});
-  });
-
   app.get('/', function (req, response) {
     pg.connect(process.env.DATABASE_URL, function(err, client, done) {
       client.query('SELECT * FROM site_table ORDER  BY ctid DESC', function(err, result) {
