@@ -43,40 +43,26 @@
       <%- r.links %>
     <% }); %>
   </div>
-  <script src="/vanilla.js"></script>
   <script>
-    var c = document.getElementById('close-link');
-    var o = document.getElementById('overlay');
-    var s = document.getElementById('info');
+    var close = document.getElementById('close-link');
+    var overlay = document.getElementById('overlay');
+    var infoButton = document.getElementById('info');
     var blurb = document.getElementById('blurb');
-    var a = document.getElementById('about-button');
-    c.onclick = function() {
-      if (blurb.classList.contains('active')) {
-       blurb.classList.remove('active');
-       c.classList.remove('active');
+    var aboutButton = document.getElementById('about-button');
+
+    close.onclick = function() { toggleActive(blurb, close); };
+    aboutButton.onclick = function() { toggleActive(blurb, close); };
+    infoButton.onclick = function() { toggleActive(infoButton, overlay); };
+
+    function toggleActive(el, button){
+      if (el.classList.contains('active')) {
+       el.classList.remove('active');
+       button.classList.remove('active');
      } else {
-       blurb.classList.add('active');
-       c.classList.add('active');
+       el.classList.add('active');
+       button.classList.add('active');
      }
-    };
-    a.onclick = function() {
-      if (blurb.classList.contains('active')) {
-       blurb.classList.remove('active');
-       c.classList.remove('active');
-     } else {
-       blurb.classList.add('active');
-       c.classList.add('active');
-     }
-    };
-    s.onclick = function() {
-      if (o.classList.contains('active')) {
-       s.classList.remove('active');
-       o.classList.remove('active');
-     } else {
-       s.classList.add('active');
-       o.classList.add('active');
-     }
-    };
+    }
   </script>
 </body>
 </html>
