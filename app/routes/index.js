@@ -34,19 +34,11 @@ module.exports = function(app, db) {
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"></head><body><div class="container">${req.body.response}</div></body></html>`;
 
     flow.exec(
-      function() {
-        fs.writeFile(`public/index-${req.body.tag}.html`, indexbody, function(err) {
-            if(err) {
-              return console.log(err);
-            }
-        });
-        fs.readFile(`public/index-${req.body.tag}.html`, this);
-      },
       function(err, data) {
         s3.putObject({
           Bucket: process.env.S3_BUCKET,
           Key: `${req.body.tag}.html`,
-          Body: data,
+          Body: indexbody,
           ContentType: 'text/html',
         }, this);
       },
