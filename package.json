@@ -1,5 +1,5 @@
 {
-  "name": "undecided.js homepage",
+  "name": "undecided.js",
   "version": "0.2.6",
   "description": "Express app for undecided.js links",
   "main": "server.js",
@@ -32,5 +32,5 @@
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": "ISC"
 }
