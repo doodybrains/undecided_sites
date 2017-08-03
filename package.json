@@ -9,6 +9,10 @@
   "scripts": {
     "start": "node server.js"
   },
+  "engines": {
+    "node": "5.4.0",
+    "npm": "3.3.12"
+  },
   "dependencies": {
     "aws-sdk": "^2.72.0",
     "body-parser": "^1.17.2",
